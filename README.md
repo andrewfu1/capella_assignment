@@ -31,7 +31,7 @@ Comments are defined using %, and are not outputted.
 
 ## Approach and Design
 
-To implement a solution to this project, I used several key programming techniques.
+For my solution, I used several key programming techniques.
 
 ### 1. State Machine for Input Processing
 A finite state machine (FSM) was used to parse input, handle macros, and track context. The tick() function maintains state variables using an enum to determine whether a character belongs to:
