@@ -41,16 +41,13 @@ A finite state machine (FSM) was used to parse input, handle macros, and track c
 - A comment (to be ignored)
 - An escaped character
 
-### 2. Struct-Based Buffer and Macro Management
-The processor stores text using struct-based buffers (line_t) that allow dynamic resizing.
-
-### 3. Linked Lists for Macro Storage
+### 2. Linked Lists for Macro Storage
 A linked list-based symbol table (macro_list_t) is used to store user-defined macros. Each macro entry (macro_t) contains:
 - Macro name
 - Macro replacement text
 - Pointer to the next macro
 
-### 4. Recursive Expansion for Nested Macros
+### 3. Recursive Expansion for Nested Macros
 Since macros can expand into other macros, the processor recursively expands macros within expand_macro(). When a macro references another macro, the system:
 - Fetches the stored macro value.
 - Expands any nested macros within it.
