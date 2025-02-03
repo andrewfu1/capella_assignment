@@ -26,7 +26,7 @@ This project implements a **TeX-like macro processor** in C. The program reads a
 Hello, Alice!
 Hello, Bob!
 ```
-Here, \def{GREETING}{Hello, #!} defines GREETING as Hello, #!, where # gets replaced by the macro's argument. When \GREETING{World} is encountered, it expands to Hello, World!.
+Here, \def{GREET}{Hello, #!} defines GREET as Hello, #!, where # gets replaced by the macro's argument. When \GREET{Alice} is encountered, it expands to Hello, Alice!. Comments are defined using %, and are not outputted.
 
 ## Solution Walkthrough
 
