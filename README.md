@@ -10,14 +10,14 @@ This project implements a **TeX-like macro processor** in C. The program reads a
 - Recursive Expansion: Handles nested macro calls and substitutions correctly.
 - File Inclusion: Allows including external files using \include.
 
-## Example Execution
+### Example Execution
 
-### Input
+#### Input
 ```tex
 \def{GREETING}{Hello, #!}
 \GREETING{World}
 ```
-### Output
+#### Output
 ```tex
 Hello, World!
 ```
