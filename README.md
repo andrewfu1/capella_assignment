@@ -29,9 +29,28 @@ Hello, Bob!
 \def{GREET}{Hello, #!} defines GREET as Hello, #!, where # gets replaced by the macro's argument. When \GREET{Alice} is encountered, it expands to Hello, Alice!. 
 Comments are defined using %, and are not outputted.
 
-## Solution Walkthrough
+## Approach and Design
 
-### 1. Preprocessing Phase
+To implement a solution to this project, I used several key programming techniques.
+
+#### 1. State Machine for Input Processing
+A finite state machine (FSM) was used to parse input, handle macros, and track context. The tick() function maintains state variables using an enum to determine whether a character belongs to:
+- Plain text
+- A macro name
+- A macro argument
+- A comment (to be ignored)
+- An escaped character
+
+#### 2. Struct-Based Buffer and Macro Management
+The processor stores text using struct-based buffers (line_t) that allow dynamic resizing.
+
+#### 3. Linked Lists for Macro Storage
+A linked list-based symbol table (macro_list_t) is used to store user-defined macros. Each macro entry (macro_t) contains:
+- Macro name
+- Macro replacement text
+- Pointer to the next macro
+
+#### 1. Preprocessing Phase
 The preprocessor reads the input file(s), removes comments (% to newline), and processes escape characters (\, {, }, #, %).
 The cleaned-up text is stored in a buffer (pre_buffer) before macro expansion begins.
 #### 2. Processing Phase
