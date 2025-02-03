@@ -35,6 +35,7 @@ The preprocessor reads the input file(s), removes comments (% to newline), and p
 
 Key Functions:
 * preprocessor(argc, argv, pre_buffer)
+
   * Determines whether input comes from stdin or files.
   * Calls the function to process input files line-by-line.
 preprocessor_startloop(input, pre_buffer)
