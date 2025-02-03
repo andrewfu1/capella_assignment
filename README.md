@@ -50,19 +50,31 @@ A linked list-based symbol table (macro_list_t) is used to store user-defined ma
 - Macro replacement text
 - Pointer to the next macro
 
+#### 4. Recursive Expansion for Nested Macros
+Since macros can expand into other macros, the processor recursively expands macros within expand_macro(). When a macro references another macro, the system:
+- Fetches the stored macro value.
+- Expands any nested macros within it.
+- Continues processing until fully expanded.
+
+## Solution Breakdown
+
+The solution consists of three primary phases.
+
 #### 1. Preprocessing Phase
-The preprocessor reads the input file(s), removes comments (% to newline), and processes escape characters (\, {, }, #, %).
-The cleaned-up text is stored in a buffer (pre_buffer) before macro expansion begins.
+- Reads input from multiple files and processes them sequentially.
+- Removes comments (%) while keeping the rest of the text intact.
+- Handles escape sequences (\, {, }, #, %).
+- Stores preprocessed text in a dynamically allocated buffer (pre_buffer).
 #### 2. Processing Phase
 The macro processor:
-Scans the pre_buffer character by character.
-Identifies and extracts macro names and their arguments.
-Expands macros using a linked list (macro_list_t) that stores defined macros.
-Recursively replaces macro calls with their expanded values.
+- Scans the pre_buffer character by character.
+- Identifies and extracts macro names and their arguments.
+- Expands macros using a linked list (macro_list_t) that stores defined macros.
+- Recursively replaces macro calls with their expanded values.
 #### 3. Macro Expansion
 When encountering a macro, the processor:
-Checks if it is built-in or user-defined.
-Retrieves its stored value from macro_list_t.
-Expands the macro’s value while substituting its arguments (# placeholders).
+- Checks if it is built-in or user-defined.
+- Retrieves its stored value from macro_list_t.
+- Expands the macro’s value while substituting its arguments (# placeholders).
 
 
