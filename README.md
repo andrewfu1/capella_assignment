@@ -77,5 +77,7 @@ When encountering a macro, the processor:
 - Retrieves its stored value from macro_list_t.
 - Expands the macro’s value while substituting its arguments (# placeholders).
 
-#### I did this project entirely by myself without AI help. Specific function documentation can be found in the code.
+## Collaboration
+
+I did this project entirely by myself without AI help. Specific function documentation can be found in the code.
 
