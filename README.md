@@ -76,5 +76,5 @@ When encountering a macro, the processor:
 
 ## Collaboration
 
-I did this project entirely by myself without AI help. Specific function documentation can be found in the code.
+I did this project by myself. Specific function documentation can be found in the code.
 
