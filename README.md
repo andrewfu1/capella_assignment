@@ -1,4 +1,4 @@
-# LaTeX-Like Macro Processor
+# LaTeX Macro Processor
 
 ## Project Overview
 
